@@ -1,33 +1,14 @@
 import React from 'react';
-const repositoryName = 'Unform2';
+import RepositoryItem from './RepositoryItem';
 
 export default function RepositoryList(){
     return (
         <section className="repository-list">
             <h2>Lista de repositórios</h2>
-
             <ul>
-                <li>
-                    <h3>{ repositoryName}</h3>
-                    <p>Forms in React</p>
-                    <a href="">
-                        Acessar repositório
-                    </a>
-                </li>
-                <li>
-                    <h3>unform</h3>
-                    <p>Forms in React</p>
-                    <a href="">
-                        Acessar repositório
-                    </a>
-                </li>
-                <li>
-                    <h3>unform</h3>
-                    <p>Forms in React</p>
-                    <a href="">
-                        Acessar repositório
-                    </a>
-                </li>
+                <RepositoryItem repository={{ name: 'Learning ReactJS', description: 'Aprendendo ReactJS', link: 'https://arenafortnite.com.br'}} />
+                <RepositoryItem></RepositoryItem>
+                <RepositoryItem repository={{ name: 'Learning NodeJS', description: 'Aprendendo NodeJS', link: 'https://arenafortnite.com.br'}} />
             </ul>
         </section>
     )
