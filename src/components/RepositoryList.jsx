@@ -1,7 +1,7 @@
 import React from 'react';
-import RepositoryItem from './RepositoryItem';
+import { RepositoryItem } from './RepositoryItem';
 
-export default function RepositoryList(){
+export function RepositoryList(){
     return (
         <section className="repository-list">
             <h2>Lista de repositórios</h2>

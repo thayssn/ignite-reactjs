@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function RepositoryItem( { repository }){
+export function RepositoryItem( { repository }){
     return (
         <li>
             <h3>{ repository?.name ?? 'Repositório Padrão' }</h3>
