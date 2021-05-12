@@ -31,6 +31,14 @@ module.exports = {
                 ],
                 exclude: [ /node_modules/],
                 loader: "babel-loader",
+            },
+            {
+                test: /\.scss?$/,
+                include: [
+                    path.resolve(__dirname, "src")
+                ],
+                exclude: /node_modules/,
+                use: ['style-loader', 'css-loader', 'sass-loader'], 
             }
         ]
     }
