@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
 
+// Conceito de Imutabilidade
+
+// Não podemos alterar diretamente uma variável.
+// Devemos atribuir um novo valor a ela.
+
+// let array = ['thays'];
+// Errado:  array.push('mari') 
+// Correto: [...array, 'mari']
+
 export function Counter() {
     const [ counter, setCounter ] = useState(0);
     
