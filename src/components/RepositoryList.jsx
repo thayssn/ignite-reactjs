@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { RepositoryItem } from './RepositoryItem';
+import '../styles/repositories.scss'
+
+const githubApi = 'https://api.github.com/orgs/rocketseat/repos';
 
 export function RepositoryList(){
+
+    const [ repositories, setRepositories] = useState([]);
+
+    useEffect(() => {
+        fetch(githubApi)
+        .then(response => response.json())
+        .then(data => 
+            setRepositories(data)
+        )
+    }, []);
+
     return (
         <section className="repository-list">
             <h2>Lista de repositórios</h2>
             <ul>
-                <RepositoryItem repository={{ name: 'Learning ReactJS', description: 'Aprendendo ReactJS', link: 'https://arenafortnite.com.br'}} />
-                <RepositoryItem></RepositoryItem>
-                <RepositoryItem repository={{ name: 'Learning NodeJS', description: 'Aprendendo NodeJS', link: 'https://arenafortnite.com.br'}} />
+                { repositories.map(repository => <RepositoryItem repository={repository} key={repository.id} /> )}
             </ul>
         </section>
     )
